@@ -138,7 +138,7 @@
 			success : function(JSONData , status){
 				//alert(JSONData)
 				
-				if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+				//if ($(window).scrollTop() == $(document).height() - $(window).height()) {
 					
 			      	//console.log(++page);
 			      	var list = JSONData["list"];
@@ -174,7 +174,7 @@
 					/* 	self.location = "/product/getProduct?prodNo="+productNo+"&menu=search"			 */
 					
 				    
-				}
+				//}
 			}
 			
 		})
@@ -414,14 +414,14 @@
 			    <form class="form-inline" name="detailForm">
 			    
 			    <div class="form-group">
-				    <select class="form-control" name="searchFilter" >
+				    <select class="form-control" name="searchFilter" id="searchFilter" >
 					    <option value="0" ${ ! empty search.searchCondition && search.searchFilter ==0 ? "selected" : "" }>신상품 순</option>
 						<option value="1" ${ ! empty search.searchCondition && search.searchFilter ==1 ? "selected" : "" }>가격 낮은 순</option>
 						<option value="2" ${ ! empty search.searchCondition && search.searchFilter ==2 ? "selected" : "" }>가격 높은 순</option> 
 					</select>
 			    
 				  <div class="form-group">
-				    <select class="form-control" name="searchCondition" >
+				    <select class="form-control" name="searchCondition" id="searchCondition" >
 						<option value="0" ${ ! empty search.searchCondition && search.searchCondition ==0 ? "selected" : "" }>상품번호</option>
 						<option value="1" ${ ! empty search.searchCondition && search.searchCondition ==1 ? "selected" : "" }>상품명</option>
 						<option value="2" ${ ! empty search.searchCondition && search.searchCondition ==2 ? "selected" : "" }>상품가격</option>

@@ -31,14 +31,16 @@
 	             <ul class="nav navbar-nav">
 	             
 	              <!--  회원관리 DrowDown -->
+	              <c:if test="${sessionScope.user.role != null}">
 	              <li class="dropdown">
 	                     <a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 	                         <span >회원관리</span>
 	                         <span class="caret"></span>
 	                     </a>
 	                     <ul class="dropdown-menu">
+	                     	
 	                         <li><a href="#">개인정보조회</a></li>
-	                         
+	                        
 	                         <c:if test="${sessionScope.user.role == 'admin'}">
 	                         	<li><a href="#">회원정보조회</a></li>
 	                         </c:if>
@@ -47,6 +49,7 @@
 	                         <li><a href="#">etc...</a></li>
 	                     </ul>
 	                 </li>
+	               </c:if>
 	                 
 	              <!-- 판매상품관리 DrowDown  -->
 	               <c:if test="${sessionScope.user.role == 'admin'}">
@@ -85,10 +88,11 @@
 	                 
 	                 <li><a href="#">etc...</a></li>
 	             </ul>
-	             
+	             <c:if test="${sessionScope.user.role != null}">
 	             <ul class="nav navbar-nav navbar-right">
 	                <li><a href="#">로그아웃</a></li>
 	            </ul>
+	            </c:if>
 		</div>
 		<!-- dropdown hover END -->	       
 	    
