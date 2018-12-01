@@ -133,6 +133,7 @@
 		});	
 		
 		$("td:nth-child(2)").css("color","red");
+		$("td:nth-child(7)").css("color","blue");
 		$(".ct_list_pop td:nth-child(5)").css("color","red");
 		$(".ct_list_pop td:nth-child(13)").css("color","red");
 		

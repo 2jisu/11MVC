@@ -63,7 +63,7 @@
 	#floatMenu {
 		position: absolute;
 		width: 100px;
-		height: 400px;
+		height: 450px;
 		/* right: 200px; */
 		right:10%;
 		padding:0;
@@ -117,6 +117,8 @@
 	
 	
 	$(window).scroll(function(){
+		
+		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
 		//currentPage++;
 
 		$.ajax({
@@ -138,7 +140,7 @@
 			success : function(JSONData , status){
 				//alert(JSONData)
 				
-				//if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+				
 					
 			      	//console.log(++page);
 			      	var list = JSONData["list"];
@@ -174,10 +176,9 @@
 					/* 	self.location = "/product/getProduct?prodNo="+productNo+"&menu=search"			 */
 					
 				    
-				//}
-			}
-			
-		})
+				}
+			})			
+		}
 		
 		
 		
@@ -299,9 +300,9 @@
 		
 		$(".tran").on("click",function(){
 			var productNo = $(this).data("param6");
-			
-			productalert('배송이 시작되었습니다.');
-			self.location="/purchase/updateTranCodeByProd?prodNo="+productNo+"&tranCode=2";			
+	
+			self.location="/purchase/updateTranCodeByProd?prodNo="+productNo+"&tranCode=2";	
+			//productalert('배송이 시작되었습니다.');
 			
 		});
 		
@@ -555,13 +556,13 @@
 	 <div id="floatMenu">
 		
 	
-		<div id="innerMenu">
-		최근 본 상품<br/>
+		<div id="innerMenu" style="font-weight: bold; text-align: center;">
+		최근 본 상품<br/><br/></div>
 		<c:forEach var = "product" items="${cookieList }" end="4">
 		<img src = "/images/uploadFiles/${product.fileName}" align="absmiddle" style="width: 50px;" style="height: 100px;"/><br/>
 		${product.prodName }<br/>
 		</c:forEach>
-		</div>
+		
 
 	
 	</div>
